@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Art School</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script type="module" src="script.js"></script>
+  <script src="../Js/script.js"></script>>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="../images/art.png" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <!-- Бургер-иконка (видна в мобильной версии) -->
+      <div class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <!-- Содержимое навигационного меню -->
+      <div class="nav-content">
+        <a href="../index.html">Главная</a>
+        <a href="../pages/information.html">О школе</a>
+        <a href="../pages/programs.html">Программы</a>
+        <a href="../pages/Forma.html">Регистрация</a>
+      </div>
+    </nav>
+  </header>
+
+
+  <main>
+    <section class="registration-section">
+      <h2>Запись в школу</h2>
+      <form class="registration-form" id="registrationForm">
+        <div class="form-group">
+          <label for="fullName">ФИО ученика</label>
+          <input type="text" id="fullName" name="fullName" required>
+        </div>
+
+        <div class="form-group">
+          <label for="birthDate">Дата рождения</label>
+          <input type="date" id="birthDate" name="birthDate" required>
+        </div>
+
+        <div class="form-group">
+          <label for="parentName">ФИО родителя</label>
+          <input type="text" id="parentName" name="parentName" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Телефон</label>
+          <input type="tel" id="phone" name="phone" pattern="[0-9]{11}" placeholder="89001234567" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="course">Выберите программу</label>
+          <select id="course" name="course" required>
+            <option value="">Выберите программу обучения</option>
+            <option value="online">Онлайн обучение</option>
+            <option value="real">Живое присудствие</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="experience">Опыт в искусстве</label>
+          <textarea id="experience" name="experience" rows="4"
+            placeholder="Расскажите о вашем опыте в искусстве (если есть)"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Отправить заявку</button>
+      </form>
+    </section>
+  </main>
+  <footer class="footer">
+    <img class="F1" src="../images/logo-black.svg" alt="Tekwill">
+    <p>Сайт разработан учениками Т.Л. Д. Кантемира<br>
+      Шкрабко Ариной и Процюк Дарьей<br>
+      В рамках проекта Tekwill Junior Ambasadors<br>
+      Не обязательно отражает мнение проекта<br></p>
+    <img class="F2" src="../images/logo-d-cantemir.png" alt="Cantemir" width="100" height="100">
+  </footer>

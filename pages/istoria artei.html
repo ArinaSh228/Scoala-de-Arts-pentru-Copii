@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:regular,500,600,700,800&display=swap&subset=cyrillic-ext"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"></script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css" rel="stylesheet">
+    <title>istoria artei</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../images/art.png" />
+    <script src="https://code.jquery.com/jquery-git.min.js"></script>
+    <script src="../Js/dei.js"></script>
+    <script src="../Js/principală.js"></script>
+    <script src="../Js/dei2.js"></script>
+</head>
+
+<body style="background-color: rgb(219, 217, 219);">
+    <div class="preloader">
+        <img src="../images/krug-ittena.png" alt="Прелоадер">
+    </div>
+    <div id="back_to_top" class="back-to-top">
+        <svg xmlns="http://www.w3.org/2000/svg" style="transform: rotate(270deg);" width="24" height="24"
+            viewBox="0 0 24 24">
+            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
+        </svg>
+    </div>
+    <script>
+        $('.back-to-top').click(function () {
+            $('body,html').animate({ scrollTop: 0 }, 800); // 800 - Скорость анимации
+        });
+
+        $(window).scroll(function () { // Отслеживаем начало прокрутки
+            let scrolled = $(window).scrollTop(); // Вычисляем сколько было прокручено.
+
+            if (scrolled > 300) { // Если высота прокрутки больше 350 - показываем кнопку
+                $('.back-to-top').addClass('active');
+            } else {
+                $('.back-to-top').removeClass('active');
+            }
+        });
+    </script>
+    <nav>
+        <div class="nav-content">
+            <a href="../index.html">Главная</a>
+            <a href="../pages/information.html">О школе</a>
+            <a href="../pages/programs.html">Программы</a>
+            <a href="../pages/Forma.html">Регистрация </a>
+    </nav>
+    </div>
+    </header>
+    <div class="p5">
+        <img src="../img/p/pngshki/p6.png" width="35px" height="35px" alt="My Image">
+    </div>
+
+    <main>
+        <div class="page__main-block main-block">
+            <div class="main-block__container _container">
+
+                <div class="main-block__body">
+
+
+                    <div class="padding-info">
+                        <div class="info-text">
+                            <h3>istoria artei</h3><br>
+                            <div class="about">
+                                • Занятия по Истории Искусств будут проходить с 1 по 4 класс.
+                                Cursurile de Istoria Artei se vor ține de la clasele 1 până la 4.<br><br>
+                            </div>
+                            <h3>Запись в Художественную школу:</h3>
+                            <button class="button"><a href="Forma.html">
+                                    <div class="button-text">Регистрация</div>
+                                </a></button>
+                        </div>
+
+
+                        <div class="info-img">
+                            <img src="../images/ist.jpg" wight="303" height="348" class="ghtlv">
+                        </div>
+                    </div>
+                    <div class="page__main-block">
+                        <div class="main-block__container2">
+
+                            <div class="main-block__body2">
+
+
+                                <div class="padding-info2">
+                                    <div class="info-text3">
+                                        <h1 class="Comp_de_sh">История искусств</h1>
+                                        <h3>О предмете:</h3><br>
+                                        История искусства – знакомство с мировым и национальным искусством, анализ
+                                        художественных стилей и направлений.
+                                        Учащиеся изучают древнюю живопись, классицизм, импрессионизм, авангард,
+                                        творчество молдавских художников и др.
+                                        Используются презентации, лекции, обсуждения.<br><br>
+                                 
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </main>
+
+                    <footer class="footer">
+                        <img class="F1" src="../images/logo-black.svg" alt="Tekwill">
+                        <p>Сайт разработан учениками Т.Л. Д. Кантемира<br>
+                            Шкрабко Ариной и Процюк Дарьей<br>
+                            В рамках проекта Tekwill Junior Ambasadors<br>
+                            Не обязательно отражает мнение проекта<br></p>
+                        <img class="F2" src="../images/logo-d-cantemir.png" alt="Cantemir" width="100" height="100">
+                    </footer>
+                    <script>
+                        window.addEventListener('load', function () {
+                            const preloader = document.querySelector('.preloader');
+                            preloader.classList.add('preloader-finish');
+                            setTimeout(() => {
+                                preloader.style.display = 'none';
+                            }, 500);
+                        });</script>
+</body>
