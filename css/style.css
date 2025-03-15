@@ -1,0 +1,1229 @@
+/* =============================== */
+/* Общие стили и базовый сброс     */
+/* =============================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #333;
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+/* =============================== */
+/* Стили хедера и навигации         */
+/* =============================== */
+header {
+  width: 100%;
+  padding: 20px 0;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Центрируем всё меню */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.burger {
+  display: none;
+}
+
+.nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.nav a,
+.footer-contacts a {
+  color: #333;
+  /* Исправлено с white на #333 для читаемости */
+  font-size: 14px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+nav a:hover {
+  background-color: #f0f0f0;
+}
+
+.nav.show {
+  transform: translateX(0);
+}
+
+nav a[aria-current='page'] {
+  color: #8318a3;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 20px;
+}
+
+/* =============================== */
+/* Стили для секций (hero, news и т.д.) */
+/* =============================== */
+.hero {
+  height: 80vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=1200&auto=format') center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.5rem;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+section {
+  margin: 4rem 0;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.news-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+}
+
+.news-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.news-content {
+  padding: 1.5rem;
+}
+
+.news-content h3 {
+  margin-bottom: 0.5rem;
+}
+
+.collage {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.collage img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.collage img:hover {
+  transform: scale(1.05);
+}
+
+.student-works {
+  padding: 2rem 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 400px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #2563eb;
+}
+
+.swiper-pagination-bullet-active {
+  background: #2563eb;
+}
+
+/* =============================== */
+/* Стили футера с изображениями и текстом */
+/* =============================== */
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 40px;
+  width: 100%;
+}
+
+footer p {
+  margin: 0 20px;
+}
+
+.F1 {
+  position: static;
+  width: 200px;
+  margin-right: 20px;
+}
+
+.F2 {
+  position: static;
+  width: 130px;
+  height: 135px;
+  margin-left: 20px;
+}
+
+.nav li {
+  margin-bottom: 20px;
+}
+
+/* -----GALLERY (Карусель) ----- */
+.gallery {
+  background: #c8abde;
+  padding: 75px 0;
+  height: 550px;
+  width: 100%;
+  overflow: visible;
+  transition: height 0.3s ease;
+}
+
+.gallery:hover {
+  height: 700px;
+}
+
+.gallery-cell {
+  width: 56%;
+  height: 400px;
+  margin-right: 10px;
+  background: #ffffff;
+  counter-increment: gallery-cell;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: height 0.3s ease, transform 0.3s ease;
+}
+
+.gallery-cell:hover {
+  height: 600px;
+  transform: scale(1.05);
+}
+
+.gallery-text-block {
+  margin-left: 390px;
+  margin-top: -350px;
+  transition: all 0.3s ease;
+}
+
+/* --------TEXT STYLE-------- */
+h3 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.2;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.button {
+  color: #191919;
+  padding: 7px 15px;
+  margin-top: 10px;
+  border: 2px solid #1f1f1f;
+  background: #bf9fdb;
+  border-radius: 15px;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  color: #191919;
+  padding: 9px 17px;
+  background-color: #49b3e9;
+  box-shadow: 5px 4px 15px rgba(22, 21, 32, 0.489);
+}
+
+.button-text {
+  color: #2e2e2e;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+/* ----Programs---- */
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.left-block {
+  width: 75%;
+  padding: 20px;
+}
+
+.right-block {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+}
+
+.right-block img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ----Forma (school)---- */
+nav {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  padding: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #f0f0f0;
+}
+
+.nav {
+  align-items: center;
+  background-color: black;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  left: 0;
+  padding: 20px 0;
+  position: absolute;
+  top: 60px;
+  width: 100%;
+}
+
+.nav.show {
+  display: block;
+}
+
+.nav a {
+  display: block;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+  order: 1;
+}
+
+main {
+  max-width: 1200px;
+  margin: 6rem auto 2rem;
+  padding: 0 1rem;
+}
+
+.registration-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.form-description {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.registration-form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #2563eb;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #999;
+}
+
+.submit-btn {
+  background-color: #da8ee4;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+.submit-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* Дополнительные блоки */
+.main-block {
+  margin-top: 20px;
+  position: relative;
+}
+
+.main-block__body {
+  padding: 240px 0 30px 0;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.main-block__body>*:not(:last-child) {
+  margin: 0 0 30px 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Niconne&display=swap');
+
+.main-block__title {
+  text-align: center;
+  font-size: 70px;
+  font-weight: 1000;
+  letter-spacing: 0.4px;
+  line-height: 137%;
+  color: #000;
+  font-family: Impact, Charcoal, sans-serif;
+}
+
+.main-block__text {
+  color: #000;
+  font-size: 20px;
+  line-height: 150%;
+  text-align: center;
+}
+
+.main-block__image {
+  position: absolute;
+  width: 50%;
+  height: auto;
+  top: 40px;
+  left: 400px;
+}
+
+.main-block__image-bw {
+  position: absolute;
+  width: 50%;
+  height: auto;
+  top: 220px;
+  left: 70%;
+  opacity: 0.7;
+}
+
+.main-block__image-2 {
+  position: absolute;
+  width: 50%;
+  height: auto;
+  top: 550px;
+  left: -150px;
+}
+
+.p5 {
+  position: relative;
+  top: 240px;
+  left: 19%;
+}
+
+/* Стили для блока прелоадера */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preloader img {
+  width: 8%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.back-to-top {
+  background: #49b3e9;
+  border-radius: 50%;
+  border: 2px solid #191919;
+  position: fixed;
+  bottom: -50px;
+  padding: 10px 12px;
+  right: 50px;
+  cursor: pointer;
+  transition: 0.3s all;
+  z-index: 1000;
+}
+
+.main-block__body2 {
+    padding: 500px 0 100px 0;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+    height: 70px;
+}
+
+.padding-info {
+  position: absolute;
+  width: 1062px;
+  height: 396px;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 15px;
+  background: #fff;
+}
+
+.info-text {
+  position: absolute;
+  margin: 30px 500px 24px 80px;
+}
+
+.info-img {
+  position: absolute;
+  width: 503px;
+  left: 690px;
+  top: 24px;
+}
+
+.info-img2 {
+  position: absolute;
+  width: 503px;
+  height: 348px;
+  left: 530px;
+  top: 1150px;
+}
+
+.about_2 {
+  position: absolute;
+  margin: 30px 0 24px 80px;
+  line-height: 1.5;
+}
+
+.info-img3 {
+  position: absolute;
+  width: 503px;
+  left: 570px;
+  height: 348px;
+  top: 1060px;
+}
+
+.info-img4 {
+  position: absolute;
+  width: 503px;
+  left: 534px;
+  height: 348px;
+  top: 1070px;
+}
+
+._container2 {
+  max-width: 1046px;
+  padding: 0 150px;
+  margin: 0 auto;
+  box-sizing: content-box;
+  padding-top: 180px;
+}
+
+.padding-info2 {
+  position: absolute;
+  width: 1062px;
+  min-height: 300px;
+  top: 300px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 15px;
+  background: #fff;
+  text-align: center;
+}
+
+
+.info-text3 {
+  position: absolute;
+  margin: 30px 100px 24px 100px;
+  text-align: center;
+}
+
+.Comp_de_sh {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.footer__copy2 {
+  font-size: 90%;
+  line-height: 1.7;
+  letter-spacing: 0.2px;
+  color: #000;
+  z-index: 100;
+  float: right;
+  align-items: center;
+  margin: 100px -70px 10px -70px;
+}
+
+/* ---Предметы--- */
+.container3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 800px;
+  margin: auto;
+  padding-top: 100px;
+}
+
+.item {
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.item p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* ========================================================================= */
+/* Адаптивность для шапки (header) с бургер-меню                           */
+/* ========================================================================= */
+@media (max-width: 768px) {
+  header {
+    width: 100%;
+    padding: 10px 0;
+    margin: 0;
+  }
+
+  nav {
+    justify-content: center;
+    padding: 0 20px;
+  }
+
+  nav .nav-content {
+    flex-direction: column;
+    display: none;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    background: #ffffff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 20px 0;
+    min-height: 150px;
+  }
+
+  nav .nav-content.active {
+    display: flex !important;
+  }
+
+  .burger {
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: 20px;
+  }
+
+  .burger span {
+    display: block;
+    width: 40px;
+    height: 5px;
+    margin: 6px auto;
+    background: #333;
+  }
+
+  nav a {
+    font-size: 16px;
+  }
+
+  /* 1. Добавляем расстояние между текстом и фото в первом блоке */
+  .padding-info {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  /* 2. Уменьшаем расстояние между фото в мобильной версии */
+  .collage {
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+  }
+
+  /* 3. Уменьшаем расстояние между блоками и хедером */
+  main {
+    margin-top: 3rem;
+  }
+}
+
+/* ========================================================================= */
+/* Дополнительная адаптивность футера                                       */
+/* ========================================================================= */
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .F1,
+  .F2 {
+    margin: 10px 0;
+    width: auto;
+    height: auto;
+    max-width: 80%;
+  }
+
+  footer p {
+    margin: 10px 0;
+    text-align: center;
+  }
+}
+
+/* ========================================================================= */
+/* Адаптивность для галереи при сжатии страницы (до 1000px)                  */
+/* ========================================================================= */
+@media (max-width: 1000px) {
+  .gallery {
+    height: auto;
+    padding-bottom: 20px;
+  }
+
+  .gallery-cell {
+    width: 100%;
+    height: auto;
+    padding-bottom: 40px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gallery-cell img {
+    width: 100%;
+    display: block;
+  }
+
+  .gallery-text-block {
+    position: static;
+    margin: 20px auto 0 auto;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ========================================================================= */
+/* Адаптивность для сетки предметов (на узких экранах)                        */
+/* ========================================================================= */
+@media (max-width: 768px) {
+  .container3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================================================= */
+/* Ссылки в блоке предметов делаем чёрными                                  */
+/* ========================================================================= */
+.container3 a {
+  color: black !important;
+  text-decoration: none;
+}
+
+.container3 a:hover {
+  color: black !important;
+  text-decoration: underline;
+}
+
+/* ========================================================================= */
+/* Адаптивность для .padding-info и .padding-info2                         */
+/* ========================================================================= */
+@media (max-width: 1024px) {
+  .padding-info {
+    position: static;
+    width: 90%;
+    height: auto;
+    /* Высота адаптируется под контент */
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    transform: none;
+    /* Убираем transform */
+    display: flex;
+    /* Добавляем flex для адаптивности */
+    flex-wrap: wrap;
+    /* Разрешаем перенос */
+    justify-content: center;
+    /* Центрируем элементы */
+  }
+
+  ._container2 {
+    max-width: 1046px;
+    padding: 0 15px;
+    margin: 0 auto;
+    box-sizing: content-box;
+    padding-top: 180px;
+}
+.main-block__body {
+  padding: 10px 0 310px 0;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+  .info-img {
+    position: static;
+    width: 100%;
+    max-width: 503px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .info-text {
+    position: static;
+    margin: 0;
+    padding: 0 10px;
+  }
+
+  .info-text h3 {
+    font-size: 20px;
+  }
+
+  .info-text .about {
+    font-size: 16px;
+  }
+
+  .button-text {
+    font-size: 16px;
+  }
+
+  .padding-info2 {
+    position: static;
+    width: 90%;
+    height: auto;
+    padding: 20px;
+    transform: none;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .main-block__body2 {
+    padding: 50px 0 100px 0;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+    height: 70px;
+  }
+
+  .info-text3 {
+    position: static;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .Comp_de_sh {
+    font-size: 28px;
+  }
+  .inform-img {
+    max-width: 750px;
+    max-height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .padding-info {
+    padding: 15px;
+    flex-direction: column;
+    /* Вертикальное расположение в мобильной версии */
+  }
+  .main-block__body {
+    padding: 10px 0 450px 0;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+}
+
+  .info-img {
+    width: 100%;
+    max-width: 100%;
+    /* Убираем ограничение 503px для полной адаптивности */
+    margin: 0 auto 20px;
+  }
+
+  .info-text {
+    font-size: 16px;
+    padding: 0;
+  }
+
+  .info-text h3 {
+    font-size: 18px;
+  }
+
+  .info-text .about {
+    font-size: 14px;
+  }
+
+  .button-text {
+    font-size: 14px;
+  }
+
+  .padding-info2 {
+    padding: 15px;
+  }
+
+  .info-text3 {
+    font-size: 16px;
+  }
+
+  .Comp_de_sh {
+    font-size: 24px;
+  }
+  .inform-img {
+    max-width: 550px;
+    max-height: 300px;
+ }
+}
+
+/* Основные стили */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+.professors-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 50px; /* Добавлен отступ снизу для расстояния от карты и меню */
+}
+
+.professor-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.professor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.professor-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.professor-card h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.professor-card h3 {
+  margin: 5px 0;
+  font-size: 18px;
+  color: #666;
+}
+
+.professor-card p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #444;
+}
+
+.professor-card .experience {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 15px;
+}
+
+/* Контейнер для карты и меню */
+.map-menu-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.map {
+  flex: 0 0 500px; /* Фиксированная ширина карты */
+  margin: 0; /* Убираем лишние отступы */
+  padding: 0; /* Убираем лишние отступы */
+}
+
+.info-text2 {
+  position: relative;
+  text-align: left;
+  color: #191919;
+}
+
+/* Стили для меню геопозиции */
+.geo-menu {
+  flex: 0 0 500px; /* Фиксированная ширина меню, равная карте */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Расстояние между блоками меню */
+}
+
+.rectangle {
+  width: 1020px;
+  height: 340px;
+  margin: auto;
+  background: #fff;
+  border-radius: 15px;
+}
+
+.location {
+  position: static; /* Убираем абсолютное позиционирование */
+  width: 100%; /* Ширина на весь контейнер меню */
+  height: 100px;
+  background: #fff;
+  border-radius: 15px;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start; /* Выравнивание текста слева */
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Добавляем тень для согласованности */
+}
+
+.contacs {
+  position: static; /* Убираем абсолютное позиционирование */
+  width: 100%; /* Ширина на весь контейнер меню */
+  height: 100px;
+  background: #fff;
+  border-radius: 15px;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start; /* Выравнивание текста слева */
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Добавляем тень для согласованности */
+}
+
+.timetable {
+  position: static; /* Убираем абсолютное позиционирование */
+  width: 100%; /* Ширина на весь контейнер меню */
+  height: 100px;
+  background: #fff;
+  border-radius: 15px;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start; /* Выравнивание текста слева */
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Добавляем тень для согласованности */
+}
+
+.content-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Полупрозрачный белый фон */
+  padding: 20px;
+  border-radius: 10px;
+  /* Скругленные углы */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Тень */
+  max-width: 1100px;
+  /* Ограничение по ширине */
+  margin: 20px auto;
+  /* Центрирование блока */
+  text-align: center;
+  /* Выравнивание текста */
+}
+.inform-img {
+   width: 950px;
+   height: 350px;
+}
+
+.content-box2 {
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Полупрозрачный белый фон */
+  padding: 20px;
+  border-radius: 10px;
+  /* Скругленные углы */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Тень */
+  max-width: 1100px;
+  /* Ограничение по ширине */
+  margin: 20px auto;
+  /* Центрирование блока */
+  text-align: center;
+  /* Выравнивание текста */
+}
+
+.register-button:hover {
+  background-color: #8a6dbf;
+  /* Темнее при наведении */
+}
+
+#more {
+  display: none;
+}
+
+/* Адаптивность для карты и меню */
+@media (max-width: 768px) {
+  .map-menu-container {
+    flex-direction: column;
+    align-items: center;
+    margin: 30px auto;
+  }
+
+  .map,
+  .geo-menu {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .professors-container {
+    margin-bottom: 30px;
+  }
+}
